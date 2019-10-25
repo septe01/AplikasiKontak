@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class CalenderViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "This is calender Fragment"
     }
     val text: LiveData<String> = _text
 }
