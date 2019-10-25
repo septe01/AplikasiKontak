@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_contact"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/title_contact" />
+
+    <item
+        android:id="@+id/navigation_calender"
+        android:icon="@drawable/ic_today_black_24dp"
+        android:title="@string/title_calender" />
+
+    <item
+        android:id="@+id/navigation_inbox"
+        android:icon="@drawable/ic_mail_black_24dp"
+        android:title="@string/title_inbox" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/title_seting" />
+
+</menu>
