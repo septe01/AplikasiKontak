@@ -3,6 +3,9 @@ package com.example.aplikasikontak
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -25,5 +28,42 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+
+//    private fun initFragment() {
+//        val adapter = ViewPagerAdapter(supportFragmentManager)
+//        adapter.addFragment(JobsFragment(), "For you")
+//        adapter.addFragment(SavedFragment(), "Saved")
+//        adapter.addFragment(ApiFragment(), "REST API")
+//        adapter.addFragment(SQLiteFragment(), "SQLite")
+//
+//        viewPager.adapter = adapter
+//
+//        tabLayout.setupWithViewPager(viewPager)
+//    }
+
+    internal inner class ViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
+
+        private var fragmentList: ArrayList<Fragment> = ArrayList()
+        private var fragmentTitleList: ArrayList<String> = ArrayList()
+
+        override fun getCount(): Int {
+            return fragmentList.size
+        }
+
+        override fun getItem(position: Int): Fragment {
+
+            return fragmentList[position]
+        }
+
+        fun addFragment(fragment: Fragment, title: String) {
+            fragmentList.add(fragment)
+            fragmentTitleList.add(title)
+        }
+
+        override fun getPageTitle(position: Int): CharSequence {
+            return fragmentTitleList[position]
+        }
     }
 }
